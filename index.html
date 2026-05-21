@@ -618,9 +618,9 @@ function parseCSV(text) {
     return {
       name: (firstName + ' ' + lastName).trim() || obj['name'] || 'Unknown',
       title: obj['title'] || obj['job title'] || obj['jobtitle'] || '',
-      company: obj['company'] || obj['company name'] || '',
-      linkedin: obj['linkedin url'] || obj['linkedin'] || obj['profile url'] || '',
-      email: obj['email'] || obj['email address'] || '',
+      company: obj['company'] || obj['company_name'] || obj['company name'] || '',
+      linkedin: obj['linkedin url'] || obj['linkedin'] || obj['linkedin_url'] || obj['profile url'] || '',
+      email: obj['email'] || obj['email address'] || obj['email_address'] || '',
       status: 'pending'
     };
   }).filter(l => l.name && l.name !== 'Unknown');
